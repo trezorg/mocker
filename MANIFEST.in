@@ -1,0 +1,1 @@
+include mocker.py py3.py test.py setup.py setup.cfg MANIFEST.in LICENSE NEWS README.md
