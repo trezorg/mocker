@@ -44,7 +44,7 @@ import sys
 import os
 import re
 import gc
-from py3 import iteritems, itervalues
+from py3 import *
 
 
 if sys.version_info < (2, 4):

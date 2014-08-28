@@ -7,9 +7,17 @@ PY2 = sys.version_info[0] == 2
 PY3 = sys.version_info[0] == 3
 
 if PY3:
+    str = str
+    unicode = str
+    bytes = bytes
+    basestring = (str, bytes)
     _iteritems = "items"
     _itervalues = "values"
 else:
+    str = str
+    unicode = unicode
+    bytes = str
+    basestring = basestring
     _iteritems = "iteritems"
     _itervalues = "itervalues"
 
