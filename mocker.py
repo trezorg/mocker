@@ -34,7 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 try:
     import __builtin__
 except ImportError:
-    import builtins
+    import builtins as __builtin__
 import tempfile
 import unittest
 import inspect
@@ -48,7 +48,7 @@ from py3 import *
 
 
 if sys.version_info < (2, 4):
-    from sets import Set as set # pragma: nocover
+    from sets import Set as set  # pragma: nocover
 
 
 __all__ = ["Mocker", "Expect", "expect", "IS", "CONTAINS", "IN", "MATCH",
@@ -726,7 +726,7 @@ class MockerBase(object):
                     for attr in attr_stack:
                         object = getattr(object, attr)
                     break
-        if isinstance(object, types.UnboundMethodType):
+        if isinstance(object, types.MethodType):
             object = object.im_func
         if spec is True:
             spec = object
